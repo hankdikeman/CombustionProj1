@@ -15,5 +15,10 @@ if __name__ == "__main__":
         temps[count] = gas1.T
         gas1()
         count += 1
+    rf = gas1.forward_rates_of_progress
+    rr = gas1.reverse_rates_of_progress
+    for i in range(gas1.n_reactions):
+        if gas1.is_reversible(i) and rf[i] != 0.0:
+            print(' %4i  %10.4g  ' % (i, (rf[i] - rr[i]) / rf[i]))
 
     print("done")
