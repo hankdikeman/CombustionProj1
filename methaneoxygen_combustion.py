@@ -51,7 +51,7 @@ if __name__ == "__main__":
         #   Flame Section   #
         #####################
         # reset composition, temp, pressure
-        comp_dict = {'C3H8': 1, 'O2': 5 / phi, 'N2': 5 * 3.76 / phi}
+        comp_dict = {'CH4': 1, 'O2': 2 / phi}
         fuelMix.TPX = STAND_T, ct.one_atm, comp_dict
         # equilibrate mixture
         fuelMix.equilibrate('HP')
@@ -62,7 +62,7 @@ if __name__ == "__main__":
         #   Combustion Section   #
         ##########################
         # reset composition, temp, pressure
-        comp_dict = {'C3H8': 1, 'O2': 5 / phi, 'N2': 5 * 3.76 / phi}
+        comp_dict = {'C3H8': 1, 'O2': 2 / phi}
         fuelMix.TPX = STAND_T, ct.one_atm, comp_dict
         # equilibrate mixture
         fuelMix.equilibrate('UV')
@@ -73,14 +73,14 @@ if __name__ == "__main__":
         # increment index counter
         count += 1
 
-    flametitle = 'Adiabatic Flame Temperature as a Function of Phi, Pr + Air'
+    flametitle = 'Adiabatic Flame Temperature as a Function of Phi, Me + O2'
     flameytitle = 'Flame Temperature (K)'
     # plot temps vs phi using matplotlib
     plot_phitemps(equivs, flametemps, flametitle, flameytitle)
 
-    combtitle = 'Adiabatic Combustion Temperature as a Function of Phi, Pr + Air'
+    combtitle = 'Adiabatic Combustion Temperature as a Function of Phi, Me + O2'
     combytitle = 'Combustion Temperature (K)'
-    combptitle = 'Adiabatic Combustion Pressure as a Function of Phi, Pr + Air'
+    combptitle = 'Adiabatic Combustion Pressure as a Function of Phi, Me + O2'
     combpytitle = 'Combustion Pressure (atm)'
     # plot temps vs phi using matplotlib
     plot_phitemps(equivs, combtemps, combtitle, combytitle)
