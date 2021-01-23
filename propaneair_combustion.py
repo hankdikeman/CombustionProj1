@@ -2,6 +2,8 @@ import cantera as ct
 import numpy as np
 import matplotlib.pyplot as plt
 plt.style.use('seaborn-bright')
+plt.rcParams["figure.figsize"] = (6, 4)
+
 
 STAND_T = 298
 
