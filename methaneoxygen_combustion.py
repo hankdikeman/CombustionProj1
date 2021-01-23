@@ -2,6 +2,7 @@ import cantera as ct
 import numpy as np
 import matplotlib.pyplot as plt
 plt.style.use('seaborn-bright')
+plt.rcParams["figure.figsize"] = (6, 4)
 
 STAND_T = 298
 
@@ -22,7 +23,7 @@ def plot_phitemps(phi, temps, title, yaxis):
     plt.xlabel('Phi')
     plt.ylabel('Flame Temperature (K)')
     plt.title(title)
-    plt.ylim(0, 2800)
+    plt.ylim(0, 3200)
     plt.show()
 
 
@@ -32,7 +33,7 @@ def plot_phipressure(phi, pressures, title, yaxis):
     plt.xlabel('Phi')
     plt.ylabel('Combustion Pressures (atm)')
     plt.title(title)
-    plt.ylim(0, 10)
+    plt.ylim(0, 25)
     plt.show()
 
 
