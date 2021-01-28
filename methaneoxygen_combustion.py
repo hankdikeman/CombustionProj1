@@ -20,7 +20,7 @@ def check_equiv(fuelMix):
 # plot phi vs adiabatic temps
 def plot_phitemps(phi, temps, title, yaxis):
     plt.plot(equivs, temps, '--k')
-    plt.xlabel('Phi')
+    plt.xlabel('ɸ')
     plt.ylabel('Flame Temperature (K)')
     plt.title(title)
     plt.ylim(0, 3200)
@@ -30,7 +30,7 @@ def plot_phitemps(phi, temps, title, yaxis):
 # plot phi vs pressures
 def plot_phipressure(phi, pressures, title, yaxis):
     plt.plot(equivs, pressures / 101325, '--k')
-    plt.xlabel('Phi')
+    plt.xlabel('ɸ')
     plt.ylabel('Combustion Pressures (atm)')
     plt.title(title)
     plt.ylim(0, 25)
@@ -74,14 +74,14 @@ if __name__ == "__main__":
         # increment index counter
         count += 1
 
-    flametitle = 'Adiabatic Flame Temperature as a Function of Phi, Me + O2'
+    flametitle = 'Adiabatic Flame Temperature as a Function of ɸ, Me + O2'
     flameytitle = 'Flame Temperature (K)'
     # plot temps vs phi using matplotlib
     plot_phitemps(equivs, flametemps, flametitle, flameytitle)
 
-    combtitle = 'Adiabatic Combustion Temperature as a Function of Phi, Me + O2'
+    combtitle = 'Adiabatic Combustion Temperature as a Function of ɸ, Me + O2'
     combytitle = 'Combustion Temperature (K)'
-    combptitle = 'Adiabatic Combustion Pressure as a Function of Phi, Me + O2'
+    combptitle = 'Adiabatic Combustion Pressure as a Function of ɸ, Me + O2'
     combpytitle = 'Combustion Pressure (atm)'
     # plot temps vs phi using matplotlib
     plot_phitemps(equivs, combtemps, combtitle, combytitle)
