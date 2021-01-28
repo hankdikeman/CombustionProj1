@@ -25,6 +25,7 @@ def plot_flame_tempvary(phi, tempvary, flametemps, title):
     plt.xlabel('Starting Temperature (K)')
     plt.ylabel('Flame Temperature (K)')
     plt.title(title + str(phi))
+    plt.grid(axis='y')
     plt.show()
 
 
@@ -34,6 +35,7 @@ def plot_flame_pressvary(phi, pressvary, flametemps, title):
     plt.xlabel('Starting Pressure (kPa)')
     plt.ylabel('Flame Temperature (K)')
     plt.title(title + str(phi))
+    plt.grid(axis='y')
     plt.show()
 
 
@@ -45,6 +47,7 @@ def plot_comps_tempvary(phi, tempvary, comps, title):
     plt.ylabel('Compositions (mol%)')
     plt.title(title + str(phi))
     plt.legend()
+    plt.grid(axis='y')
     plt.show()
 
 
@@ -56,6 +59,7 @@ def plot_comps_pressvary(phi, pressvary, comps, title):
     plt.ylabel('Compositions (mol%)')
     plt.title(title + str(phi))
     plt.legend()
+    plt.grid(axis='y')
     plt.show()
 
 
