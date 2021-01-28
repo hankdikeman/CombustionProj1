@@ -61,8 +61,8 @@ if __name__ == "__main__":
     flametemps = np.empty(shape=(211))
     combtemps = np.empty(shape=(211))
     combpress = np.empty(shape=(211))
-    compflame = np.empty(shape=(211, 6))
-    compcomb = np.empty(shape=(211, 6))
+    compflame = np.empty(shape=(211, 5))
+    compcomb = np.empty(shape=(211, 5))
     count = 0
     for phi in equivs:
         #####################
