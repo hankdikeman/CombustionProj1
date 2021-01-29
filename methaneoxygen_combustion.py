@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 plt.style.use('seaborn-bright')
 plt.rcParams["figure.figsize"] = (6, 4)
 
+
 COMP = ['H2O', 'H2', 'O2', 'CO', 'CO2']
 STAND_T = 298
 

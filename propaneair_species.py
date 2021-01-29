@@ -22,7 +22,7 @@ def check_equiv(fuelMix):
 # plot phi vs adiabatic temps
 def plot_flame_tempvary(phi, tempvary, flametemps, title):
     plt.plot(tempvary, flametemps, '--k')
-    plt.xlabel('Starting Temperature (K)')
+    plt.xlabel('Initial Temperature (K)')
     plt.ylabel('Flame Temperature (K)')
     plt.title(title + str(phi))
     plt.grid(axis='y')
@@ -32,7 +32,8 @@ def plot_flame_tempvary(phi, tempvary, flametemps, title):
 # plot phi vs adiabatic temps
 def plot_flame_pressvary(phi, pressvary, flametemps, title):
     plt.plot(pressvary / 1000, flametemps, '--k')
-    plt.xlabel('Starting Pressure (kPa)')
+    plt.xscale('log')
+    plt.xlabel('Initial Pressure (kPa)')
     plt.ylabel('Flame Temperature (K)')
     plt.title(title + str(phi))
     plt.grid(axis='y')
@@ -43,7 +44,7 @@ def plot_flame_pressvary(phi, pressvary, flametemps, title):
 def plot_comps_tempvary(phi, tempvary, comps, title):
     for i in range(len(COMP)):
         plt.plot(tempvary, comps[:, i] * 100, label=COMP[i])
-    plt.xlabel('Starting Temperature (K)')
+    plt.xlabel('Initial Temperature (K)')
     plt.ylabel('Compositions (mol%)')
     plt.title(title + str(phi))
     plt.legend()
@@ -55,7 +56,8 @@ def plot_comps_tempvary(phi, tempvary, comps, title):
 def plot_comps_pressvary(phi, pressvary, comps, title):
     for i in range(len(COMP)):
         plt.plot(pressvary / 1000, comps[:, i] * 100, label=COMP[i])
-    plt.xlabel('Starting Pressure (kPa)')
+    plt.xscale('log')
+    plt.xlabel('Initial Pressure (kPa)')
     plt.ylabel('Compositions (mol%)')
     plt.title(title + str(phi))
     plt.legend()
@@ -68,6 +70,7 @@ if __name__ == "__main__":
     fuelMix = ct.Solution('gri30.xml')
     # generate phi values and numpy array for temps
     press_vary = np.array([x * (73800 / 25) + 33700 for x in range(26)])
+    print(press_vary)
     temp_vary = np.array([x * (146 / 25) + 184 for x in range(26)])
     phi_vary = np.array([0.7, 1.0, 1.4])
     # empty arrays for temperatures
